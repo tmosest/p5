@@ -22,6 +22,7 @@ function(p5, $window, Box, $rootScope) {
         var b = sponge[i];
         //console.log(i);
         var newBoxes = b.generate();
+        $rootScope.$broadcast('sponge:do');
         //console.log(newBoxes);
         next = next.concat(newBoxes);
       }

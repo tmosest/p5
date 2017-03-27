@@ -1,19 +1,17 @@
 angular
 .module('app.common')
-.directve('backbtn', 
+.directive('backbtn', 
 [
-    '$scope',
     '$window',
-    function($scope, $window) {
+    function($window) {
         return {
-            template: `<button class="back" ng-click="back()">Back</button>`,
-            replace: true,
+            template: '<button class="back" ng-click="back()">Back</button>',
             link: function(scope, elem, attrs) {
-                $scope.back = function() {
+                scope.back = function() {
                     $window.history.back();
                 };
             },
-            restrict: 'ACE'
+            restrict: 'E'
         };    
     }
 ]);
