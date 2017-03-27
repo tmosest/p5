@@ -6,7 +6,8 @@ angular
         'app.snake.game', 
         'app.hello', 
         'app.common',
-        'app.starfield'
+        'app.starfield',
+        'app.sponge'
     ]
 )
 .config(
@@ -30,9 +31,17 @@ angular
         templateUrl: 'snake/snake.html',
     };
 
+    var spongeState = {
+        controller: 'SpongeControler as vm',
+        name: 'sponge',
+        templateUrl: 'sponge/sponge.html',
+    };
+
+
     $routeProvider
     .when("/", helloState)
     .when("/snake", snakeState)
+    .when("/sponge", spongeState)
     .when("/star-field", starFieldState);
   }
 );

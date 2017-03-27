@@ -23,7 +23,14 @@ angular
             url: '/snake'
         };
 
-        var games = [helloState, starFieldState, snakeState];
+        var spongeState = {
+            controller: 'SpongeControler as vm',
+            name: 'Sponge',
+            templateUrl: 'sponge/sponge.html',
+            url: '/sponge'
+        };
+
+        var games = [starFieldState, spongeState, snakeState];
         
         function getGames() {
             return games;
