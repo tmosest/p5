@@ -56,6 +56,13 @@
         url: '/maze'
     };
 
+    var ssState = {
+        controller: 'SsController as vm',
+        name: 'Solar System',
+        templateUrl: 'ss/ss.html',
+        url: '/ss'
+    };
+
     var perlinState = {
         controller: 'PerlinController as vm',
         name: 'Perlin',
@@ -78,8 +85,9 @@
         invadersState,
         mitosisState,
         mazeState,
-        birdState,
-        perlinState
+        ssState,
+        perlinState,
+        birdState
     ];
 
     angular
