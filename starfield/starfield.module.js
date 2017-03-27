@@ -1,2 +1,5 @@
-angular
-.module('app.starfield', []);
+(function () {
+    'use strict';
+    angular
+        .module('app.starfield', []);
+})();

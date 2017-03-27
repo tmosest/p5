@@ -1,2 +1,5 @@
-angular
-.module('app.common', []);
+(function () {
+    'use strict';
+    angular
+        .module('app.common', []);
+})();

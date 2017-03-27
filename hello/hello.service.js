@@ -1,18 +1,21 @@
-angular
-.module('app.hello')
-.service('HelloService',
-[   'GamesService',
-    function(GamesService) {
-        
-        function getGames() {
-            return GamesService.getGames();
-        }
+(function () {
+    'use strict';
+    angular
+        .module('app.hello')
+        .service('HelloService',
+        ['GamesService',
+            function (GamesService) {
 
-        getGames();
-        
-        return {
-            getGames: getGames    
-        };
-    }
-]
-);
+                function getGames() {
+                    return GamesService.getGames();
+                }
+
+                getGames();
+
+                return {
+                    getGames: getGames
+                };
+            }
+        ]
+        );
+})();

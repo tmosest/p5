@@ -1,16 +1,19 @@
-angular
-.module('app.common')
-.service('GamesService', 
-[
-    'games',
-    function(games) {
-        
-        function getGames() {
-            return games;
-        }
+(function () {
+    'use strict';
+    angular
+        .module('app.common')
+        .service('GamesService',
+        [
+            'games',
+            function (games) {
 
-        return {
-            getGames: getGames    
-        };
-    }    
-]);
+                function getGames() {
+                    return games;
+                }
+
+                return {
+                    getGames: getGames
+                };
+            }
+        ]);
+})();
