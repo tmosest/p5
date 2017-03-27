@@ -9,7 +9,7 @@ function(p5, $window, Box, $rootScope) {
     var sponge = [];
 
     sketch.setup = function() {
-      sketch.createCanvas(400, 400, sketch.WEBGL);
+      sketch.createCanvas($window.innerWidth, $window.innerHeight, sketch.WEBGL);
       sponge = []
       var b = Box.newBox(0, 0, 0, 200, sketch);
       sponge.push(b);
