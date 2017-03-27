@@ -56,6 +56,13 @@
         url: '/maze'
     };
 
+    var perlinState = {
+        controller: 'PerlinController as vm',
+        name: 'Perlin',
+        templateUrl: 'perlin/perlin.html',
+        url: '/perlin'
+    };
+
     var games = [
         starFieldState,
         spongeState,
@@ -63,7 +70,8 @@
         purpleRainState,
         invadersState,
         mitosisState,
-        mazeState
+        mazeState,
+        perlinState
     ];
 
     angular

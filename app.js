@@ -13,7 +13,8 @@
             'app.rain',
             'app.invaders',
             'app.mitosis',
-            'app.maze'
+            'app.maze',
+            'app.perlin'
         ]
         )
         .config(['$routeProvider', 'games',
