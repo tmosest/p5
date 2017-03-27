@@ -1,5 +1,13 @@
-<h1>Welcome</h1>
-<button ng-repeat="game in vm.games" 
+<style>
+    .tiles {
+       min-height: 150px;
+       border: 3px solid white;
+    }
+</style>
+<div class="container-fluid">
+<h1 class="col-xs-12 text-center">Welcome</h1>
+<button ng-repeat="game in vm.games" class="tiles btn btn-primary btn-lg col-xs-6 col-sm-4"
         ng-click="vm.goToGame(game.url)">
     {{game.name}}
 </button>
+</div>
