@@ -1,5 +1,5 @@
 (function () {
     'use strict';
     angular
-        .module('app.snake.game', ['angular-p5']);
+        .module('app.snake.game', ['app.common', 'angular-p5']);
 })();

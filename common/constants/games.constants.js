@@ -35,7 +35,19 @@
         url: '/rain'
     };
 
-    var games = [starFieldState, spongeState, snakeState, purpleRainState];
+    var invadersState = {
+        controller: 'InvadersControllers as vm',
+        name: 'Space Invaders',
+        templateUrl: 'invaders/invaders.html',
+        url: '/invaders'
+    };
+
+    var games = [
+        starFieldState,
+        spongeState,
+        snakeState,
+        purpleRainState,
+        invadersState];
 
     angular
         .module('app.common')
