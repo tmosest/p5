@@ -9,7 +9,8 @@
             'app.hello',
             'app.common',
             'app.starfield',
-            'app.sponge'
+            'app.sponge',
+            'app.rain'
         ]
         )
         .config(['$routeProvider', 'games',

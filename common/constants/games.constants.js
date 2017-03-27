@@ -28,7 +28,14 @@
         url: '/sponge'
     };
 
-    var games = [starFieldState, spongeState, snakeState];
+    var purpleRainState = {
+        controller: 'PurpleRainController as vm',
+        name: 'Purple Rain',
+        templateUrl: 'rain/rain.html',
+        url: '/rain'
+    };
+
+    var games = [starFieldState, spongeState, snakeState, purpleRainState];
 
     angular
         .module('app.common')
