@@ -42,12 +42,21 @@
         url: '/invaders'
     };
 
+    var mitosisState = {
+        controller: 'MitosisController as vm',
+        name: 'Mitosis',
+        templateUrl: 'mitosis/mitosis.html',
+        url: '/mitosis'
+    };
+
     var games = [
         starFieldState,
         spongeState,
         snakeState,
         purpleRainState,
-        invadersState];
+        invadersState,
+        mitosisState
+    ];
 
     angular
         .module('app.common')
