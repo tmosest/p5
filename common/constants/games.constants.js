@@ -49,13 +49,21 @@
         url: '/mitosis'
     };
 
+    var mazeState = {
+        controller: 'MazeController as vm',
+        name: 'Maze DFS',
+        templateUrl: 'maze/maze.html',
+        url: '/maze'
+    };
+
     var games = [
         starFieldState,
         spongeState,
         snakeState,
         purpleRainState,
         invadersState,
-        mitosisState
+        mitosisState,
+        mazeState
     ];
 
     angular
