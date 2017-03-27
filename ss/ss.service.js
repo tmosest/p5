@@ -5,7 +5,7 @@
     .factory('SS', [
         function () {
             return {
-
+                
             };
         }
     ]);

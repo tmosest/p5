@@ -77,6 +77,13 @@
         url: '/bird'
     };
 
+    var birdState = {
+        controller: 'ChessController as vm',
+        name: 'Chess',
+        templateUrl: 'chess/chess.html',
+        url: '/chess'
+    };
+
     var games = [
         starFieldState,
         spongeState,
