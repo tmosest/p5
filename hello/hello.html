@@ -1,0 +1,5 @@
+<h1>Welcome</h1>
+<button ng-repeat="game in vm.games" 
+        ng-click="vm.goToGame(game.url)">
+    {{game.name}}
+</button>

@@ -1,0 +1,45 @@
+<style>
+    .overlay {
+        background: rgba(0,0,0,0.8);
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        height: 100%;
+        padding: 150px;
+        width: 100%;
+        z-index: 999;
+        display: block !important;
+        box-sizing: border-box;
+    }
+    .back {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        z-index: 9999;
+    }
+    .score {
+        display: block;
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        z-index: 9999;
+        color: white;
+    }
+    * {
+        margin: 0px;
+    }
+    body {
+        height: 100%;
+        overflow: hidden;
+    }
+</style>
+<div ng-class="{overlay: vm.isOverlay}" style="display: none;">
+    <h1 ng-show="vm.isGameOver" style="color:white;">Game Over!</h1>
+    <h1 ng-hide="vm.isGameOver" style="color:white;">New Game!</h1>
+    <label style="color:white;">Name:</label>
+    <input type="text" ng-model="vm.name"/>
+    <button ng-click="vm.newGame()">Start Game</button>
+</div>
+<p5 sketch="snakeSketch"></p5>
+<p class="score" ng-show="vm.isGameOver">Name: {{vm.name}}, Score: {{vm.total}}</p>
+<button class="back" ng-click="vm.back()">Back</button>
