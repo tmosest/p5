@@ -11,12 +11,6 @@
         display: block !important;
         box-sizing: border-box;
     }
-    .back {
-        position: absolute;
-        top: 0px;
-        left: 0px;
-        z-index: 9999;
-    }
     .score {
         display: block;
         position: absolute;
@@ -42,4 +36,3 @@
 </div>
 <p5 sketch="snakeSketch"></p5>
 <p class="score" ng-show="vm.isGameOver">Name: {{vm.name}}, Score: {{vm.total}}</p>
-<button class="back" ng-click="vm.back()">Back</button>

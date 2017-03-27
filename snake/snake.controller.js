@@ -16,9 +16,6 @@ angular
             vm.isOverlay = true;
             $scope.$apply();
         });
-        vm.back = function() {
-            $window.history.back();
-        };
         vm.newGame = function() {
             Snake.reset();
             vm.isOverlay = false;
