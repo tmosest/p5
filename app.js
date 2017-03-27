@@ -12,36 +12,17 @@ angular
 )
 .config(
   function($routeProvider) {
-
-    var starFieldState = {
-        controller: 'StarFeildControler as vm',
-        name: 'starfield',
-        templateUrl: 'starfield/starfield.html'
-    };
-
+    for(var i = 0; i < games.length; i++) {
+        console.log(games[i]);
+        $routeProvider
+            .when(games[i].url, games[i]);
+    }
     var helloState = {
         controller: 'HelloControler as vm',
         name: 'hello',
         templateUrl: 'hello/hello.html'
     };
-
-    var snakeState = {
-        controller: 'SnakeGameController as vm',
-        name: 'snake',
-        templateUrl: 'snake/snake.html',
-    };
-
-    var spongeState = {
-        controller: 'SpongeControler as vm',
-        name: 'sponge',
-        templateUrl: 'sponge/sponge.html',
-    };
-
-
     $routeProvider
-    .when("/", helloState)
-    .when("/snake", snakeState)
-    .when("/sponge", spongeState)
-    .when("/star-field", starFieldState);
+    .when("/", helloState);
   }
 );
