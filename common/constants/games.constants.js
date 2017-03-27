@@ -11,7 +11,7 @@
         controller: 'HelloControler as vm',
         name: 'Welcome',
         templateUrl: 'hello/hello.html',
-        url: '/'
+        url: '/hello'
     };
 
     var snakeState = {
