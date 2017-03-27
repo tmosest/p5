@@ -63,6 +63,13 @@
         url: '/perlin'
     };
 
+    var birdState = {
+        controller: 'HappyBirdController as vm',
+        name: 'Happy Bird',
+        templateUrl: 'bird/bird.html',
+        url: '/bird'
+    };
+
     var games = [
         starFieldState,
         spongeState,
@@ -71,6 +78,7 @@
         invadersState,
         mitosisState,
         mazeState,
+        birdState,
         perlinState
     ];
 

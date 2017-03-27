@@ -1,7 +1,7 @@
 (function () {
     'use strict';
     angular
-        .module('app.invaders')
+        .module('app.maze')
         .factory('MazeSketch',
         ['p5', '$window', 'Maze',
             function (p5, $window, Maze) {

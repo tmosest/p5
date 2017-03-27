@@ -5,9 +5,10 @@
         [
             'ngRoute',
             'angular-p5',
+            'app.common',
+            'app.bird',
             'app.snake.game',
             'app.hello',
-            'app.common',
             'app.starfield',
             'app.sponge',
             'app.rain',

@@ -1,5 +1,5 @@
 (function () {
     'use strict';
     angular
-        .module('app.common', []);
+        .module('app.common', ['ngRoute']);
 })();
