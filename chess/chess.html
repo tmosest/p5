@@ -1,11 +1,12 @@
 <style>
-.bottom {
+.top {
     position: absolute;
-    bottom: 0px;
-    left: 0px;
-    color: yellow;
+    top: 0px;
+    left: 100px;
+    color: black;
     z-index: 9999;
+    font-size: 35px;
 }    
 </style>
 <p5 sketch="ChessSketch"></p5>
-<!-- <p class="bottom">Clicks: {{vm.clicks}}</p> -->
+<p class="top" style="color: {{vm.player}};">{{vm.player}}</p>

@@ -3,8 +3,8 @@
     angular
         .module('app.chess')
         .factory('ChessSketch',
-        ['p5', '$window', 'Chess',
-            function (p5, $window, Chess) {
+        ['p5', '$window', 'Chess', '$rootScope',
+            function (p5, $window, Chess, $rootScope) {
                 return function (sketch) {
                     var grid = [];
                     var activePiece = null;
@@ -82,6 +82,7 @@
                                 grid[i][j] = activePiece;
                                 grid[aI][aJ] = null;
                                 currentTurn++;
+                                $rootScope.$broadcast('chess:turn');
                                 if (testPiece != null && testPiece.name == 'K') {
                                     console.log("Game Over");
                                     grid = Chess.createNewBoard(sketch);
