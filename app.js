@@ -5,6 +5,7 @@
         [
             'ngRoute',
             'angular-p5',
+            'firebase',
             'app.common',
             'app.bird',
             'app.snake.game',

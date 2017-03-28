@@ -1,104 +1,124 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-        <title>P5.js</title>
-        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
-        <style>
-            .back {
-                position: absolute;
-                top: 0px;
-                left: 0px;
-                z-index: 9999;
-                height: 45px;
-            }
-            body {
-                margin-top: 45px;
-            }
-        </style>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.8/p5.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.8/addons/p5.dom.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.8/addons/p5.sound.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular-route.js"></script>
-
-        <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.min.js"></script>-->
-        <script src="angular-p5.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>P5.js</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous" />
+    <style>
+        .back {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            z-index: 9999;
+            height: 45px;
+        }
         
-        <script src="common/common.module.js"></script>
-        <script src="common/constants/games.constants.js"></script>
-        <script src="common/services/games.service.js"></script>
-        <script src="common/services/user.service.js"></script>
-        <script src="common/directive/back.directive.js"></script>
-        
-        <script src="starfield/starfield.module.js"></script>
-        <script src="starfield/starfield.controller.js"></script>
-        <script src="starfield/star.service.js"></script>
-        <script src="starfield/sketch.service.js"></script>
+        body {
+            margin-top: 45px;
+        }
+    </style>
 
-        <script src="snake/snake.module.js"></script>
-        <script src="snake/snake.service.js"></script>
-        <script src="snake/sketch.service.js"></script>
-        <script src="snake/snake.controller.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.8/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.8/addons/p5.dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.8/addons/p5.sound.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular-route.js"></script>
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/3.6.6/firebase.js"></script>
+    <!-- AngularFire -->
+    <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.js"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.min.js"></script>-->
+    <script src="angular-p5.js"></script>
 
-        <script src="sponge/sponge.module.js"></script>
-        <script src="sponge/box.service.js"></script>
-        <script src="sponge/sketch.service.js"></script>
-        <script src="sponge/sponge.controller.js"></script>
+    <script src="common/common.module.js"></script>
+    <script src="common/constants/games.constants.js"></script>
+    <script src="common/services/games.service.js"></script>
+    <script src="common/services/user.service.js"></script>
+    <script src="common/directive/back.directive.js"></script>
 
-        <script src="rain/rain.module.js"></script>
-        <script src="rain/drop.service.js"></script>
-        <script src="rain/sketch.service.js"></script>
-        <script src="rain/rain.controller.js"></script>
-        
-        <script src="hello/hello.module.js"></script>
-        <script src="hello/hello.service.js"></script>
-        <script src="hello/hello.controller.js"></script>
+    <script src="starfield/starfield.module.js"></script>
+    <script src="starfield/starfield.controller.js"></script>
+    <script src="starfield/star.service.js"></script>
+    <script src="starfield/sketch.service.js"></script>
 
-        <script src="invaders/invaders.module.js"></script>
-        <script src="invaders/drop.service.js"></script>
-        <script src="invaders/flower.service.js"></script>
-        <script src="invaders/ship.service.js"></script>
-        <script src="invaders/sketch.service.js"></script>
-        <script src="invaders/invaders.controller.js"></script>
+    <script src="snake/snake.module.js"></script>
+    <script src="snake/snake.service.js"></script>
+    <script src="snake/sketch.service.js"></script>
+    <script src="snake/snake.controller.js"></script>
 
-        <script src="mitosis/mitosis.module.js"></script>
-        <script src="mitosis/mitosis.controller.js"></script>
-        <script src="mitosis/mitosis.service.js"></script>
-        <script src="mitosis/sketch.service.js"></script>
+    <script src="sponge/sponge.module.js"></script>
+    <script src="sponge/box.service.js"></script>
+    <script src="sponge/sketch.service.js"></script>
+    <script src="sponge/sponge.controller.js"></script>
 
-        <script src="maze/maze.module.js"></script>
-        <script src="maze/maze.controller.js"></script>
-        <script src="maze/maze.service.js"></script>
-        <script src="maze/sketch.service.js"></script>
+    <script src="rain/rain.module.js"></script>
+    <script src="rain/drop.service.js"></script>
+    <script src="rain/sketch.service.js"></script>
+    <script src="rain/rain.controller.js"></script>
 
-        <script src="perlin/perlin.module.js"></script>
-        <script src="perlin/perlin.controller.js"></script>
-        <script src="perlin/sketch.service.js"></script>
+    <script src="hello/hello.module.js"></script>
+    <script src="hello/hello.service.js"></script>
+    <script src="hello/hello.controller.js"></script>
 
-        <script src="bird/bird.module.js"></script>
-        <script src="bird/sketch.service.js"></script>
-        <script src="bird/bird.controller.js"></script>
-        <script src="bird/bird.service.js"></script>
-        <script src="bird/pipe.service.js"></script>
+    <script src="invaders/invaders.module.js"></script>
+    <script src="invaders/drop.service.js"></script>
+    <script src="invaders/flower.service.js"></script>
+    <script src="invaders/ship.service.js"></script>
+    <script src="invaders/sketch.service.js"></script>
+    <script src="invaders/invaders.controller.js"></script>
 
-        <script src="ss/ss.module.js"></script>
-        <script src="ss/sketch.service.js"></script>
-        <script src="ss/ss.controller.js"></script>
-        <script src="ss/ss.service.js"></script>
+    <script src="mitosis/mitosis.module.js"></script>
+    <script src="mitosis/mitosis.controller.js"></script>
+    <script src="mitosis/mitosis.service.js"></script>
+    <script src="mitosis/sketch.service.js"></script>
 
-        <script src="chess/chess.module.js"></script>
-        <script src="chess/sketch.service.js"></script>
-        <script src="chess/chess.controller.js"></script>
-        <script src="chess/chess.service.js"></script>
+    <script src="maze/maze.module.js"></script>
+    <script src="maze/maze.controller.js"></script>
+    <script src="maze/maze.service.js"></script>
+    <script src="maze/sketch.service.js"></script>
 
-        <script src="login/login.controller.js"></script>  
-        <script src="app.js"></script>        
-    </head>
-    <body ng-app="app">
-        <ng-view></ng-view>
-        <backbtn></backbtn>
-    </body>
+    <script src="perlin/perlin.module.js"></script>
+    <script src="perlin/perlin.controller.js"></script>
+    <script src="perlin/sketch.service.js"></script>
+
+    <script src="bird/bird.module.js"></script>
+    <script src="bird/sketch.service.js"></script>
+    <script src="bird/bird.controller.js"></script>
+    <script src="bird/bird.service.js"></script>
+    <script src="bird/pipe.service.js"></script>
+
+    <script src="ss/ss.module.js"></script>
+    <script src="ss/sketch.service.js"></script>
+    <script src="ss/ss.controller.js"></script>
+    <script src="ss/ss.service.js"></script>
+
+    <script src="chess/chess.module.js"></script>
+    <script src="chess/sketch.service.js"></script>
+    <script src="chess/chess.controller.js"></script>
+    <script src="chess/chess.service.js"></script>
+
+    <script src="login/login.controller.js"></script>
+    <script src="app.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyCbJsZ1VC1TxKVX7nFsAazvQZm-xLI7l3Y",
+            authDomain: "testapp-f568c.firebaseapp.com",
+            databaseURL: "https://testapp-f568c.firebaseio.com",
+            storageBucket: "testapp-f568c.appspot.com",
+            messagingSenderId: "684777992686"
+        };
+        firebase.initializeApp(config);
+
+    </script>
+</head>
+
+<body ng-app="app">
+    <ng-view></ng-view>
+    <backbtn></backbtn>
+</body>
+
 </html>
