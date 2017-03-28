@@ -82,6 +82,8 @@
                                 grid[i][j] = activePiece;
                                 grid[aI][aJ] = null;
                                 currentTurn++;
+                                if(testPiece != null && testPiece.color != activePiece.color)
+                                    $rootScope.$broadcast('chess:kill');
                                 $rootScope.$broadcast('chess:turn');
                                 if (testPiece != null && testPiece.name == 'K') {
                                     console.log("Game Over");
