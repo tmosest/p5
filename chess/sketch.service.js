@@ -7,13 +7,13 @@
             function (p5, $window) {
                 return function (sketch) {
                     var grid = [];
-                    sketch.setup = function() {
+                    sketch.setup = function () {
                         sketch.createCanvas(640, 640);
                         var k = 0;
-                        for(var i = 0; i < 8; i++) {
+                        for (var i = 0; i < 8; i++) {
                             var row = [];
-                            for(var j = 0; j < 8; j++) {
-                                if ( (i % 2 ==  j % 2) ) {
+                            for (var j = 0; j < 8; j++) {
+                                if ((i % 2 == j % 2)) {
                                     row.push("red");
                                     sketch.fill(255, 255, 255, 100);
                                 } else {
@@ -29,10 +29,10 @@
                         sketch.background(51);
                         sketch.fill(0, 0, 255, 100);
                         var k = 0;
-                        for(var i = 0; i < 8; i++) {
+                        for (var i = 0; i < 8; i++) {
                             var row = [];
-                            for(var j = 0; j < 8; j++) {
-                                if ( (i % 2 ==  j % 2) ) {
+                            for (var j = 0; j < 8; j++) {
+                                if ((i % 2 == j % 2)) {
                                     sketch.fill(255, 255, 255, 100);
                                 } else {
                                     sketch.fill(0, 0, 0, 100);
@@ -41,6 +41,12 @@
                             }
                             grid.push(row);
                         }
+                        sketch.textSize(32);
+                        sketch.text("word", 10, 30);
+                        sketch.fill(0, 102, 153);
+                        sketch.text("word", 10, 60);
+                        sketch.fill(0, 102, 153, 51);
+                        sketch.text("word", 10, 90);
                     };
                 }
             }
