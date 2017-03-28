@@ -70,8 +70,8 @@
                     };
                     sketch.mousePressed = function (s) {
                         console.log(s);
-                        var x = s.layerX;
-                        var y = s.layerY;
+                        var x = s.clientX;
+                        var y = s.clientY - 45;
                         var j = Math.floor(x / 80);
                         var i = Math.floor(y / 80);
                         console.log('i: ' + i + ', j: ' + j);
