@@ -12,12 +12,12 @@
                 var vm = this;
                 vm.name = User.getName();
                 vm.submit = function () {
-                    User.setName(vm.name);
-                    return $location.url('hello');
-                    // Login with Facebook
-                    auth.$signInWithPopup("facebook").then(function (firebaseUser) {
+                    // Login w/ Google
+                    auth.$signInWithPopup("google").then(function (firebaseUser) {
                         console.log("Signed in as:", firebaseUser.uid);
                         console.log(firebaseUser);
+                        User.setName(firebaseUser.user.displayName);
+                        $location.url('hello');
                     }).catch(function (error) {
                         console.log("Authentication failed:", error);
                     });

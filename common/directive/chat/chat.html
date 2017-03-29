@@ -1,0 +1,10 @@
+<div class="col-xs-12">
+    <ul>
+        <li ng-repeat="message in messages">{{ message.text }}</li>
+    </ul>
+    <p>New Message</p>
+    <textarea ng-model="newMessageText">
+
+        </textarea>
+    <button ng-click="addMessage()">Send</button>
+</div>

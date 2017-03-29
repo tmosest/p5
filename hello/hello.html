@@ -9,14 +9,5 @@
     <button ng-repeat="game in vm.games" class="tiles btn btn-primary btn-lg col-xs-6 col-sm-4" ng-click="vm.goToGame(game.url)">
     {{game.name}}
     </button>
-    <div class="col-xs-12">
-        <ul>
-            <li ng-repeat="message in vm.messages">{{ message.text }}</li>
-        </ul>
-        <p>New Message</p>
-        <textarea ng-model="vm.newMessageText">
-
-        </textarea>
-        <button ng-click="vm.addMessage()">Send</button>
-    </div>
+    <chat></chat>
 </div>
