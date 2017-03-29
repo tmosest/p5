@@ -77,11 +77,18 @@
         url: '/bird'
     };
 
-    var birdState = {
+    var chessState = {
         controller: 'ChessController as vm',
         name: 'Chess',
         templateUrl: 'chess/chess.html',
         url: '/chess'
+    };
+
+    var paishoState = {
+        controller: 'PaishoController as vm',
+        name: 'Pai Sho',
+        templateUrl: 'paisho/paisho.html',
+        url: '/paisho'
     };
 
     var games = [
@@ -94,7 +101,9 @@
         mazeState,
         ssState,
         perlinState,
-        birdState
+        birdState,
+        chessState,
+        paishoState
     ];
 
     angular
