@@ -12,16 +12,25 @@
                     var center = canvasSize / 2;
                     var dx = boardRadius / 18;
 
+                    sketch.preload = function () {
+                        Paisho.preloadImages(sketch);
+                    };
+
                     sketch.setup = function () {
+                        Paisho.constructHands(sketch);
                         sketch.createCanvas(canvasSize, canvasSize);
                     };
+
                     sketch.draw = function () {
                         sketch.background(100);
                         Paisho.drawPaishoBoard(sketch);
                         Paisho.drawPlayerAreas(sketch);
+                        Paisho.drawHands(sketch);
                     };
+                    
                     sketch.mousePressed = function (s) {
                         console.log(s);
+                        Paisho.checkHands(sketch, s);
                     };
                 }
             }

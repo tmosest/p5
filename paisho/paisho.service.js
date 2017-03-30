@@ -5,6 +5,29 @@
         .factory('Paisho',
         ['p5', '$rootScope',
             function (p5, $rootScope) {
+
+                var jasmineImg;
+
+                function preloadImages(sketch) {
+                    jasmineImg = sketch.loadImage("paisho/WPSDarkJasmineTile.gif");
+                }
+
+                function drawJasmineTile(sketch, x, y, w, h) {
+                    sketch.image(jasmineImg, x, y, w, h);
+                }
+                
+                class Title {
+                    constructor(name, image) {
+                        this.name = name || 'j';
+                        this.x = 0;
+                        this.y = 0;
+                        this.image = image || 'paisho/WPSDarkJasmineTile.gif';
+                        this.r = 30;
+                    }
+                    getMoves() {
+                    }
+                };
+
                 var grid = null;
 
                 var canvasSize = 640;
@@ -169,7 +192,7 @@
                     left: 0,
                     bottom: center - 9 * dx
                 };
-                
+
                 var playerArea2 = {
                     top: 0,
                     left: 0,
@@ -213,6 +236,60 @@
                 var hand1 = [];
                 var hand2 = [];
 
+                function constructHands(sketch) {
+                    hand1.push(new Title());
+                    hand1.push(new Title());
+                    hand1.push(new Title());
+                    hand1.push(new Title());
+
+                    hand2.push(new Title());
+                    hand2.push(new Title());
+                    hand2.push(new Title());
+                    hand2.push(new Title());
+
+                    for (var i = 0; i < hand1.length; i++) {
+                        hand1[i].x = Math.random() * sketch.width + 250;
+                        hand1[i].y = sketch.random(playerArea1.top, playerArea1.top + 3 * dx);
+                        hand1[i].r = 30;
+                    }
+                    for (var i = 0; i < hand2.length; i++) {
+                        hand2[i].x = Math.random() * sketch.width + 250;
+                        hand2[i].y = sketch.random(playerArea2.top, playerArea2.bottom - 30);
+                        hand2[i].r = 30;
+                    }
+                }
+
+                function drawHands(sketch) {
+                    for (var i = 0; i < hand1.length; i++) {
+                        drawJasmineTile(sketch, hand1[i].x, hand1[i].y, hand1[i].r, hand1[i].r);
+
+                    }
+                    for (var i = 0; i < hand2.length; i++) {
+                        drawJasmineTile(sketch, hand2[i].x, hand2[i].y, hand2[i].r, hand2[i].r);
+                    }
+                }
+
+                function checkHands(sketch, s) {
+                    var x = s.clientX;
+                    var y = s.clientY;
+                    for (var i = 0; i < hand1.length; i++) {
+                        console.log(hand1[i].y);
+                        if(sketch.dist(x,y - 45,hand1[i].x, hand1[i].y) <= hand1[i].r) {
+                            hand1[i].r = 60;
+                            console.log(hand1[i]);
+                        } 
+                        else hand1[i].r = 30;
+                    }
+                    for (var i = 0; i < hand2.length; i++) {
+                        console.log(hand1[i].y);
+                        if(sketch.dist(x,y - 45,hand2[i].x, hand2[i].y) <= hand2[i].r) {
+                            hand2[i].r = 60;
+                            console.log(hand2[i]);
+                        } 
+                        else hand2[i].r = 30;
+                    }
+                }
+
                 function getHand1() {
                     return hand1;
                 }
@@ -225,15 +302,23 @@
                     hand1 = h;
                 }
 
-                function getHand2() {
+                function setHand2() {
                     hand1 = h;
                 }
 
                 return {
+                    preloadImages: preloadImages,
+                    constructHands: constructHands,
                     drawPaishoBoard: drawPaishoBoard,
                     drawPlayerAreas: drawPlayerAreas,
+                    drawHands: drawHands,
+                    checkHands: checkHands,
                     getGrid: getGrid,
-                    setGrid: setGrid
+                    setGrid: setGrid,
+                    getHand1: getHand1,
+                    getHand2: getHand2,
+                    setHand1: setHand1,
+                    setHand2: setHand2
                 };
             }
         ]);
