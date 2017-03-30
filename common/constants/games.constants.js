@@ -91,6 +91,13 @@
         url: '/paisho'
     };
 
+    var colorState = {
+        controller: 'ColorController as vm',
+        name: 'Color Selector',
+        templateUrl: 'color/color.html',
+        url: '/color'
+    };
+
     var games = [
         starFieldState,
         spongeState,
@@ -103,7 +110,8 @@
         perlinState,
         birdState,
         chessState,
-        paishoState
+        paishoState,
+        colorState
     ];
 
     angular

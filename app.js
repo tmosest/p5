@@ -19,7 +19,8 @@
             'app.perlin',
             'app.ss',
             'app.chess',
-            'app.paisho'
+            'app.paisho',
+            'app.color'
         ]
         )
         .config(['$routeProvider', 'games',
