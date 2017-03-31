@@ -1,0 +1,5 @@
+<p5 oncontextmenu="return false" sketch="MineSketch"></p5>
+<h1 ng-show="vm.isGameOver">Game Over</h1>
+<h2 ng-show="vm.isWin">You Won!!!!!</h2>
+<p>Mines {{vm.mineCount}}</p>
+<button ng-show="vm.isGameOver" ng-click="vm.newGame()">New Game</button>

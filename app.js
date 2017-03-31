@@ -20,7 +20,8 @@
             'app.ss',
             'app.chess',
             'app.paisho',
-            'app.color'
+            'app.color',
+            'app.mine'
         ]
         )
         .config(['$routeProvider', 'games',

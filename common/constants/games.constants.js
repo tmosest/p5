@@ -98,6 +98,13 @@
         url: '/color'
     };
 
+    var mineState = {
+        controller: 'MineController as vm',
+        name: 'Mine Sweep',
+        templateUrl: 'mine/mine.html',
+        url: '/mine'
+    };
+
     var games = [
         starFieldState,
         spongeState,
@@ -111,7 +118,8 @@
         birdState,
         chessState,
         paishoState,
-        colorState
+        colorState,
+        mineState
     ];
 
     angular
