@@ -6,8 +6,9 @@
         [
             '$location',
             'GamesService',
-            'User',            
-            function ($location, GamesService, User) {
+            'User',
+            'socket',
+            function ($location, GamesService, User, socket) {
                 var vm = this;
                 vm.games = GamesService.getGames();
                 vm.name = User.getName();
@@ -16,6 +17,9 @@
                 vm.goToGame = function (name) {
                     $location.url(name);
                 };
+                socket.on('send:time', function (data) {
+                    vm.time = data.time;
+                });
             }
         ]);
 })();
